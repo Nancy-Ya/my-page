@@ -1,0 +1,297 @@
+/**
+ * Layout Styles - 页面布局样式
+ * Hero、Section 等页面级布局
+ */
+
+/* ========== Hero Section ========== */
+.l-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px var(--section-padding-x) 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.l-hero__content {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.l-hero__text {
+  position: relative;
+  z-index: 1;
+}
+
+.l-hero__greeting {
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--theme-text-muted);
+  margin-bottom: var(--space-5);
+}
+
+.l-hero__title {
+  font-size: clamp(var(--text-4xl), 8vw, var(--text-6xl));
+  font-weight: var(--font-medium);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-6);
+}
+
+.l-hero__title span {
+  display: block;
+}
+
+.l-hero__title-accent {
+  background: linear-gradient(135deg, var(--theme-accent-primary), var(--theme-accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.l-hero__subtitle {
+  font-size: var(--text-xl);
+  color: var(--theme-text-secondary);
+  margin-bottom: var(--space-3);
+  font-weight: var(--font-light);
+}
+
+.l-hero__company {
+  font-size: var(--text-base);
+  color: var(--theme-text-muted);
+  letter-spacing: var(--tracking-wide);
+  margin-bottom: var(--space-6);
+}
+
+.l-hero__badges {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.l-hero__image {
+  position: relative;
+}
+
+.l-hero__image-wrapper {
+  position: relative;
+  padding: var(--space-8);
+}
+
+.l-hero__image-frame {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 85%;
+  height: 100%;
+  border: 1px solid var(--theme-border);
+  z-index: 0;
+  transition: border-color var(--transition-base);
+}
+
+.l-hero:hover .l-hero__image-frame {
+  border-color: var(--theme-accent-primary);
+}
+
+.l-hero__img {
+  width: 100%;
+  height: auto;
+  max-width: 450px;
+  position: relative;
+  z-index: 1;
+  box-shadow: var(--shadow-lg);
+  filter: grayscale(20%);
+  transition: filter var(--transition-slow);
+}
+
+.l-hero__image:hover .l-hero__img {
+  filter: grayscale(0%);
+}
+
+@media (max-width: 1024px) {
+  .l-hero__content {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  
+  .l-hero__image {
+    order: -1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .l-hero__img {
+    max-width: 300px;
+  }
+  
+  .l-hero__image-frame {
+    display: none;
+  }
+}
+
+/* ========== About Section ========== */
+.l-about {
+  background: var(--theme-bg-secondary);
+}
+
+.l-about__content {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--space-10);
+}
+
+.l-about__text {
+  font-size: var(--text-lg);
+  color: var(--theme-text-secondary);
+  line-height: 2;
+}
+
+.l-about__text p {
+  margin-bottom: var(--space-5);
+}
+
+.l-about__text br {
+  display: block;
+  content: "";
+  margin-bottom: 0.3em;
+}
+
+.l-about__quote {
+  font-size: var(--text-xl);
+  color: var(--theme-text-primary);
+  font-style: italic;
+  border-left: 3px solid var(--theme-accent-primary);
+  padding-left: var(--space-6);
+  margin: var(--space-8) 0;
+  line-height: 1.6;
+  line-height: var(--leading-snug);
+}
+
+@media (max-width: 1024px) {
+  .l-about__content {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+/* ========== Skills Section ========== */
+.l-skills {
+  background: var(--theme-bg-primary);
+}
+
+.l-skills__content {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--space-10);
+  align-items: center;
+}
+
+.l-skills__chart {
+  display: flex;
+  justify-content: center;
+}
+
+.l-skills__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+}
+
+@media (max-width: 1024px) {
+  .l-skills__content {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+}
+
+@media (max-width: 768px) {
+  .l-skills__list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========== Projects Section ========== */
+.l-projects {
+  background: var(--theme-bg-secondary);
+  overflow: hidden;
+}
+
+.l-projects__content {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+/* ========== Timeline Section ========== */
+.l-timeline {
+  padding: var(--section-padding-y) 0;
+}
+
+.l-timeline__content {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-x);
+}
+
+/* ========== Gallery Section ========== */
+.l-gallery {
+  padding: var(--section-padding-y) 0;
+}
+
+.l-gallery__header {
+  padding: 0 var(--section-padding-x);
+  max-width: var(--container-max);
+  margin: 0 auto var(--space-8);
+}
+
+/* ========== Parallax Background ========== */
+.l-parallax {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.l-parallax__shape {
+  position: absolute;
+  opacity: 0.03;
+}
+
+.l-parallax__shape--1 {
+  width: 600px;
+  height: 600px;
+  border: 1px solid var(--theme-text-primary);
+  border-radius: 50%;
+  top: 10%;
+  right: -200px;
+}
+
+.l-parallax__shape--2 {
+  width: 400px;
+  height: 400px;
+  background: var(--theme-accent-primary);
+  border-radius: 50%;
+  bottom: 20%;
+  left: -150px;
+  filter: blur(100px);
+}
+
+.l-parallax__shape--3 {
+  width: 300px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--theme-accent-primary), transparent);
+  top: 40%;
+  left: 10%;
+}
