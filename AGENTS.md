@@ -14,38 +14,53 @@
 ```
 .
 ├── index.html                 # 主页面入口
-├── avatar.jpg                 # 个人头像图片
-├── css/                       # 样式系统
-│   ├── design-tokens.css      # 设计系统变量（颜色、间距、字体）
-│   ├── base.css               # 基础重置和全局样式
-│   ├── utilities.css          # 原子化工具类
-│   ├── components.css         # BEM 组件样式
-│   ├── layouts.css            # 页面布局样式
-│   ├── animations.css         # 动画关键帧
-│   └── main.css               # 样式入口文件
-├── js/                        # JavaScript 架构
-│   ├── core/                  # 核心系统
-│   │   ├── EventBus.js        # 发布订阅事件总线
-│   │   ├── StateManager.js    # 响应式状态管理
-│   │   └── Component.js       # 组件基类
-│   ├── utils/                 # 工具函数
-│   │   ├── dom.js             # DOM 工具
-│   │   ├── math.js            # 数学工具
-│   │   └── detect.js          # 环境检测
-│   ├── components/            # UI 组件
-│   │   ├── Cursor.js          # 自定义光标
-│   │   ├── ThemeToggle.js     # 主题切换
-│   │   ├── Parallax.js        # 视差滚动
-│   │   ├── RadarChart.js      # SVG 雷达图
-│   │   ├── WordCloud.js       # 动态词云
-│   │   ├── Gallery.js         # 图片轮播
-│   │   ├── ScrollAnimations.js # 滚动动画
-│   │   ├── SmoothScroll.js    # 平滑滚动
-│   │   └── FloatingParticles.js # 星空粒子背景
-│   ├── config.js              # 全局配置（数据集中管理）
-│   └── app.js                 # 应用入口
+├── assets/                    # 静态资源
+│   ├── images/                # 图片资源
+│   │   └── avatar.jpg         # 个人头像图片
+│   ├── css/                   # 样式系统
+│   │   ├── design-tokens.css  # 设计系统变量（颜色、间距、字体）
+│   │   ├── base.css           # 基础重置和全局样式
+│   │   ├── utilities.css      # 原子化工具类
+│   │   ├── components.css     # BEM 组件样式
+│   │   ├── layouts.css        # 页面布局样式
+│   │   ├── animations.css     # 动画关键帧
+│   │   └── main.css           # 样式入口文件
+│   └── js/                    # JavaScript 架构
+│       ├── core/              # 核心系统
+│       │   ├── EventBus.js    # 发布订阅事件总线
+│       │   ├── StateManager.js # 响应式状态管理
+│       │   └── Component.js   # 组件基类
+│       ├── utils/             # 工具函数
+│       │   ├── dom.js         # DOM 工具
+│       │   ├── math.js        # 数学工具
+│       │   └── detect.js      # 环境检测
+│       ├── components/        # UI 组件
+│       │   ├── Cursor.js      # 自定义光标
+│       │   ├── ThemeToggle.js # 主题切换
+│       │   ├── Parallax.js    # 视差滚动
+│       │   ├── RadarChart.js  # SVG 雷达图
+│       │   ├── WordCloud.js   # 动态词云
+│       │   ├── Gallery.js     # 图片轮播
+│       │   ├── ScrollAnimations.js # 滚动动画
+│       │   ├── SmoothScroll.js # 平滑滚动
+│       │   └── FloatingParticles.js # 星空粒子背景
+│       ├── config.js          # 全局配置（数据集中管理）
+│       └── app.js             # 应用入口
+├── introductions/             # 自我介绍文档
+│   └── nancy.mdx              # 页面内容同步文档
+├── skills/                    # 项目级 skills
+│   └── personal-portfolio-engineering/
+│       ├── SKILL.md           # skill 入口说明
+│       └── assets/            # skill 附带模板资源
 └── AGENTS.md                  # 本文档
 ```
+
+## 内容同步规则
+
+- 网页中的人物信息、教育经历、技能、客户列表、联系方式等内容发生变化时，必须同步更新 `introductions/nancy.mdx`。
+- `introductions/nancy.mdx` 中的人物信息发生变化时，也必须同步更新网页中的对应内容，保证两处信息一致。
+- 如果本次修改只发生在一侧，提交前必须检查另一侧是否已完成同步。
+- 新增人物描述时，优先以网页最终展示内容为准，再同步到 `introductions/nancy.mdx` 做结构化沉淀。
 
 ## 技术栈详情
 
@@ -145,7 +160,7 @@ python3 -m http.server 8080
 
 ### 修改内容
 
-编辑 `js/config.js` 修改个人数据：
+编辑 `assets/js/config.js` 修改个人数据：
 
 | 配置项 | 说明 |
 |--------|------|
@@ -158,7 +173,7 @@ python3 -m http.server 8080
 
 ### 样式定制
 
-编辑 `css/design-tokens.css` 修改设计系统：
+编辑 `assets/css/design-tokens.css` 修改设计系统：
 - `--color-purple-*`: 紫色色系
 - `--space-*`: 间距尺度
 - `--text-*`: 字体大小
@@ -168,9 +183,8 @@ python3 -m http.server 8080
 ### 部署文件
 部署以下文件到静态托管服务：
 - `index.html`
-- `avatar.jpg`
-- `css/` 目录
-- `js/` 目录
+- `assets/` 目录
+- `introductions/` 目录（如需同时发布介绍文档）
 
 ### 推荐托管
 - GitHub Pages

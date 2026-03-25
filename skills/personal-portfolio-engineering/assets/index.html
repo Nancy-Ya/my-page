@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Portfolio - Built with engineering architecture">
+    <title>Portfolio</title>
+    
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Parallax Background Shapes -->
+    <div class="l-parallax">
+        <div class="l-parallax__shape l-parallax__shape--1" data-parallax="0.02"></div>
+        <div class="l-parallax__shape l-parallax__shape--2" data-parallax="-0.03"></div>
+        <div class="l-parallax__shape l-parallax__shape--3" data-parallax="0.05"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="c-nav">
+        <div class="c-nav__logo">
+            <!-- Decorative Logo -->
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M16 0L20 12L32 16L20 20L16 32L12 20L0 16L12 12L16 0Z" fill="var(--theme-accent-primary)" opacity="0.8"/>
+                <circle cx="16" cy="16" r="4" fill="var(--theme-bg-primary)"/>
+            </svg>
+        </div>
+        <div class="c-nav__links">
+            <a href="#about" class="c-nav__link">关于</a>
+            <a href="#skills" class="c-nav__link">技能</a>
+            <a href="#projects" class="c-nav__link">项目</a>
+            <a href="#contact" class="c-nav__link">联系</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="l-hero">
+        <div class="l-hero__content">
+            <div class="l-hero__text">
+                <p class="l-hero__greeting">Hello, I'm</p>
+                <h1 class="l-hero__title">
+                    <span>Your Name</span>
+                    <span class="l-hero__title-accent">Your Title</span>
+                </h1>
+                <p class="l-hero__subtitle">Subtitle or Position</p>
+                <p class="l-hero__company">Company or Organization</p>
+                <div class="l-hero__badges">
+                    <span class="c-badge">Badge 1</span>
+                    <span class="c-badge">Badge 2</span>
+                </div>
+            </div>
+            <div class="l-hero__image">
+                <div class="l-hero__image-wrapper">
+                    <div class="l-hero__image-frame"></div>
+                    <img src="avatar.jpg" alt="Profile" class="l-hero__img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section l-about">
+        <div class="u-container">
+            <header class="c-section-header js-scroll-animate">
+                <p class="c-section-header__number">01</p>
+                <h2 class="c-section-header__title">关于我</h2>
+            </header>
+            <div class="l-about__content">
+                <div class="l-about__text js-scroll-animate">
+                    <p>
+                        Your introduction here.<br>
+                        Use <br> tags to control line breaks.<br>
+                        Avoid awkward wrapping.
+                    </p>
+                    <p class="l-about__quote">
+                        "Your favorite quote or motto"
+                    </p>
+                    <p>
+                        More about your background.<br>
+                        Keep paragraphs concise.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section l-skills">
+        <div class="u-container">
+            <header class="c-section-header js-scroll-animate">
+                <p class="c-section-header__number">02</p>
+                <h2 class="c-section-header__title">专业技能</h2>
+            </header>
+            <div class="l-skills__content">
+                <div class="l-skills__chart js-scroll-animate">
+                    <div id="radarChartContainer"></div>
+                </div>
+                <div class="l-skills__list js-scroll-animate">
+                    <!-- Skill bars will be generated from config -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section (Word Cloud) -->
+    <section id="projects" class="section l-projects">
+        <div class="u-container">
+            <header class="c-section-header js-scroll-animate">
+                <p class="c-section-header__number">03</p>
+                <h2 class="c-section-header__title">项目经历</h2>
+            </header>
+            <div id="wordCloud" class="js-scroll-animate"></div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="l-timeline">
+        <div class="l-timeline__content">
+            <header class="c-section-header js-scroll-animate">
+                <p class="c-section-header__number">04</p>
+                <h2 class="c-section-header__title">教育/经历</h2>
+            </header>
+            <div class="c-timeline">
+                <div class="c-timeline__track js-scroll-animate">
+                    <!-- Timeline items from config -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="l-gallery">
+        <div class="l-gallery__header">
+            <header class="c-section-header js-scroll-animate">
+                <p class="c-section-header__number">05</p>
+                <h2 class="c-section-header__title">生活剪影</h2>
+            </header>
+        </div>
+        <div class="c-gallery">
+            <div class="c-gallery__track">
+                <!-- Gallery items -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="c-contact">
+        <div class="u-container u-container--narrow">
+            <h2 class="c-contact__title js-scroll-animate">联系我</h2>
+            <p class="c-contact__desc js-scroll-animate">
+                Get in touch for collaboration or just to say hi.
+            </p>
+            <div class="c-contact__links js-scroll-animate">
+                <a href="mailto:email@example.com" class="c-contact__link">email@example.com</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="c-footer">
+        <p class="c-footer__text">© 2026 Your Name</p>
+    </footer>
+
+    <!-- JavaScript Modules -->
+    <script src="js/core/EventBus.js"></script>
+    <script src="js/core/StateManager.js"></script>
+    <script src="js/core/Component.js"></script>
+    <script src="js/utils/dom.js"></script>
+    <script src="js/utils/math.js"></script>
+    <script src="js/utils/detect.js"></script>
+    <script src="js/components/Cursor.js"></script>
+    <script src="js/components/ThemeToggle.js"></script>
+    <script src="js/components/Parallax.js"></script>
+    <script src="js/components/RadarChart.js"></script>
+    <script src="js/components/WordCloud.js"></script>
+    <script src="js/components/Gallery.js"></script>
+    <script src="js/components/ScrollAnimations.js"></script>
+    <script src="js/components/SmoothScroll.js"></script>
+    <script src="js/components/FloatingParticles.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
